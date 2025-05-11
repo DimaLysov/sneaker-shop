@@ -7,6 +7,11 @@ services:
     image: postgres:14-alpine
     env_file: 
       - ./back/.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U youruser -d yourdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     ports:
       - "5432:5432"
     volumes:
@@ -25,7 +30,8 @@ services:
       - "8000"
     # restart: always
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - app-network
 
