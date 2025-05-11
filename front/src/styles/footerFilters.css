@@ -1,0 +1,75 @@
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.logo-icon {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  background: linear-gradient(90deg, #ff5a5f, #ff8a00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-description {
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legal-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.legal-link:hover {
+  color: #ff5a5f;
+}
+
+.product-info {
+  padding: 1rem;
+}
