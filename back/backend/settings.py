@@ -67,8 +67,8 @@ CORS_ALLOW_METHODS = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = [
+#     "https://tgsneakers.ru",
 #     "http://localhost:3000",
-#     'https://679e-45-67-231-18.ngrok-free.app'# Адрес вашего фронтенда
 # ]
 
 
