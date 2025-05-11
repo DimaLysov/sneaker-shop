@@ -23,7 +23,7 @@ services:
       - ./back/.env
     expose:
       - "8000"
-    restart: always
+    # restart: always
     depends_on:
       - postgres
     networks:
