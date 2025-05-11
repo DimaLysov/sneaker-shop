@@ -8,7 +8,7 @@ services:
     env_file: 
       - ./back/.env
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U youruser -d yourdb"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sneakers-shop-db"]
       interval: 5s
       timeout: 5s
       retries: 10
