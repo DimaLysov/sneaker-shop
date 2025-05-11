@@ -33,9 +33,6 @@ services:
   frontend:
     build:
       context: ./front
-      args:
-        - REACT_APP_API_URL=${REACT_APP_API_URL}
-        - REACT_APP_BASE_NAME=${REACT_APP_BASE_NAME}
     env_file:
       - ./front/.env
     ports:
