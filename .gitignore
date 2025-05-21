@@ -78,6 +78,5 @@ MANIFEST
 .idea/**/gradle.xml
 .idea/**/libraries
 
-
-
-# sneakers-shop-app/media/api/images/*
+sneakers-shop-app/media/api/images/*
+back/media/api/images/*

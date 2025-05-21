@@ -13,5 +13,5 @@ class SKU(models.Model):
         return f'{self.model_sneaker} - размер: {self.size}'
 
     class Meta:
-        verbose_name = 'товар'
-        verbose_name_plural= 'Все товары'
+        verbose_name = 'кроссовок'
+        verbose_name_plural= 'Кроссовки'

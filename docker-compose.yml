@@ -5,7 +5,7 @@ networks:
 services:
   postgres:
     image: postgres:14-alpine
-    env_file: 
+    env_file:
       - ./back/.env
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d sneakers-shop-db"]
@@ -25,6 +25,9 @@ services:
     command: sh -c "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 backend.wsgi:application"
     env_file:
       - ./back/.env
+    volumes:
+      - ./back/static:/back/static
+      - ./back/media:/back/media
     ports:
       - "8000:8000"
     # restart: always
@@ -40,13 +43,13 @@ services:
     env_file:
       - ./front/.env
     ports:
-      - "3000:3000"
+      - "8080:80"
     depends_on:
       - backend
     # restart: always
     networks:
       - app-network
-    
+
   nginx:
     image: nginx:latest
     restart: unless-stopped
@@ -54,7 +57,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./back/static:/back/static
+      - ./back/media:/back/media
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/etc/nginx/ssl
     depends_on:
