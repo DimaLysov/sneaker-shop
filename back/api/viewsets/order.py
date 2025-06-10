@@ -45,7 +45,7 @@ class OrderViewSet(ModelViewSet):
                 quantity=item.quantity,
                 price=sku.price
             )
-            sku.count -= 1
+            sku.count -= item.quantity
             sku.save()
         cart_items.delete()
         return Response(serializer.data)
